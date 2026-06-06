@@ -22,7 +22,7 @@ table playlists_tracks {
   playlist_id integer [not null]
   track_id integer [not null]
 
-  indexes {
+  indexes {-
     (playlist_id, track_id) [unique]
   }
 }

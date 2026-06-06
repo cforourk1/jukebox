@@ -1,0 +1,29 @@
+
+
+ schema.sql — write 3 CREATE TABLE statements
+
+ playlists table (id, name, description)
+ tracks table (id, name, duration_ms)
+ playlists_tracks table (id, playlist_id, track_id) with CASCADE and unique constraint on combo
+
+
+ Run npm run db:schema to verify
+ db/queries/tracks.js — write createTrack
+ db/queries/playlists.js — write createPlaylist
+ db/queries/playlists_tracks.js — write createPlaylistTrack
+ db/seed.js — seed 20 tracks, 10 playlists, 15 playlist_track connections
+ Pass npm run test:database
+
+Server
+
+ app.js — add middleware, wire up both routers
+ server.js — connect to db and start listening
+ api/tracks.js — GET /tracks
+ api/tracks.js — GET /tracks/:id
+ api/playlists.js — GET /playlists
+ api/playlists.js — POST /playlists
+ api/playlists.js — GET /playlists/:id
+ api/playlists.js — GET /playlists/:id/tracks
+ api/playlists.js — POST /playlists/:id/tracks
+ Pass npm run test
+
