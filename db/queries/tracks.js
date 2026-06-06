@@ -14,3 +14,28 @@ export async function createTrack(name, duration) {
   } = await db.query(sql, [name, duration]);
   return track;
 }
+
+// returns all tracks
+
+export async function getTracks() {
+  const sql = `
+  SELECT *
+  FROM tracks
+  `;
+  const { rows: tracks } = await db.query(sql);
+  return tracks;
+}
+
+// gets a track by ID
+
+export async function getTrackById(id) {
+  const sql = `
+  SELECT *
+  FROM tracks
+  WHERE id = $1
+  `;
+  const {
+    rows: [track],
+  } = await db.query(sql, [id]);
+  return track;
+}

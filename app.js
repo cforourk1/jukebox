@@ -32,7 +32,8 @@ if (err.code === "22P02") {
 });
 
 
-
+/* catch all error handler that sends a message if none of the other error handlers can give a specific message
+*/
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).send("Sorry! Something went wrong.");
