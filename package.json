@@ -1,9 +1,9 @@
 {
   "name": "jukebox",
   "type": "module",
-  "imports": {
-    "#*": "./*.js"
-  },
+"imports": {
+  "#*": "./*"
+},
   "scripts": {
     "start": "node --env-file=.env server.js",
     "dev": "node --watch --env-file=.env server.js",
